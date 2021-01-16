@@ -1,4 +1,11 @@
 steps: 
+  - id: "run bash"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          ls
  
   - id: 'build your instance'
     name: 'maven:3-jdk-8'
