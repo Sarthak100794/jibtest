@@ -12,3 +12,8 @@ steps:
     entrypoint: mvn
     args: ['clean','package']
     dir: "run/helloworld"
+  - id: 'build your instancee'
+    name: 'maven:3.6.0-jdk-11-slim'
+    entrypoint: mvn
+    args: ['compile','jib:build']
+    dir: "run/helloworld"   
