@@ -74,6 +74,17 @@ limitations under the License.
           </execution>
         </executions>
       </plugin>
+	    <plugin>
+  <groupId>com.google.cloud.tools</groupId>
+  <artifactId>jib-maven-plugin</artifactId>
+  <version>2.0.0</version>
+  <configuration>
+    <to>
+      <image>gcr.io/PROJECT/IMAGE</image>
+    </to>
+  </configuration>
+</plugin>
+
       <!-- [START cloudrun_helloworld_jib] -->
       <!-- [START run_helloworld_jib] -->
       <plugin>
