@@ -8,7 +8,7 @@ steps:
           ls
     dir: "run/helloworld" 
   - id: 'build your instance'
-    name: 'maven:3-jdk-8'
+    name: 'maven:3.6.0-jdk-11-slim'
     entrypoint: mvn
     args: ['compile','jib:build']
     dir: "run/helloworld"
