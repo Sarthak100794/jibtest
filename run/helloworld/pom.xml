@@ -80,7 +80,7 @@ limitations under the License.
   <version>2.0.0</version>
   <configuration>
     <to>
-      <image>gcr.io/PROJECT/IMAGE</image>
+      <image>gcr.io/practical-case-298304/jib</image>
     </to>
   </configuration>
 </plugin>
