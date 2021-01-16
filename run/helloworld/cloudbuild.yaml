@@ -6,8 +6,9 @@ steps:
       - "-c"
       - |
           ls
- 
+    dir: "run/helloworld" 
   - id: 'build your instance'
     name: 'maven:3-jdk-8'
     entrypoint: mvn
     args: ['clean','package']
+    dir: "run/helloworld"
