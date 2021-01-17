@@ -17,11 +17,4 @@ steps:
     entrypoint: mvn
     args: ['compile','jib:build']
     dir: "run/helloworld"
- -  id: 'Deploy image to kubernetes'
-    name: "gcr.io/cloud-builders/gke-deploy"
-    args:
-    - run
-    - --filename=./src
-    - --image=gcr.io/practical-case-298304/jib
-    - --location=us-central1-c
-    - --cluster=cluster-1     
+     
