@@ -19,5 +19,10 @@ steps:
     dir: "run/helloworld"
   - id: 'Deploy image to kubernetes'
     name: 'gcr.io/cloud-builders/gke-deploy'
-    
+    args:
+    - run
+    - --filename=./src
+    - --image=gcr.io/$PROJECT_ID/jib:latest
+    - --location=us-central1-c
+    - --cluster=cluster-1 
      
