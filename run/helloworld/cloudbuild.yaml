@@ -10,7 +10,7 @@ steps:
   - id: 'build your instance'
     name: 'maven:3.6.0-jdk-11-slim'
     entrypoint: mvn
-    args: ['clean','package']
+    args: ['clean','package','-Dmaven.test.skip=true']
     dir: "run/helloworld"
   - id: 'build your instancee'
     name: 'maven:3.6.0-jdk-11-slim'
