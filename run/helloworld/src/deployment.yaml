@@ -8,7 +8,9 @@ spec:
   containers:
   - name: private-reg-container
     image: gcr.io/practical-case-298304/jib:latest
-
+    env:
+    - name: test
+      values: myvalue
 
 
 
