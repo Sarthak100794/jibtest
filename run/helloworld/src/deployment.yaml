@@ -8,3 +8,20 @@ spec:
   containers:
   - name: private-reg-container
     image: gcr.io/practical-case-298304/jib:latest
+
+
+
+
+
+
+-------------------------------------------------------------
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-image3
+  labels:
+     app: hello
+spec:
+  containers:
+  - name: private-reg-container
+    image: nginx
