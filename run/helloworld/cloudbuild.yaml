@@ -24,5 +24,13 @@ steps:
     - --filename=./run/helloworld/src
     - --image=gcr.io/$PROJECT_ID/jib:latest
     - --location=us-central1-c
-    - --cluster=cluster-1 
+    - --cluster=cluster-1  
+  - id: 'Deploy image to kkubernetes'
+    name: 'gcr.io/cloud-builders/gke-deploy'
+    args:
+    - run
+    - --filename=./run/helloworld/src/main
+    - --image=gcr.io/$PROJECT_ID/jib:latest
+    - --location=us-central1-c
+    - --cluster=cluster-1  
      
