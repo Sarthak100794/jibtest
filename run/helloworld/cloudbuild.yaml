@@ -22,6 +22,7 @@ steps:
           cd helloworld
           cd src
           cd main
+          ls
           gcloud builds submit        
           
  # - id: 'Deploy image to kubernetes'
