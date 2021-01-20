@@ -1,6 +1,6 @@
 steps: 
   - id: "run bash"
-    name: 'gcr.io/cloud-builders/gcloud'
+    name: 'gcr.io/cloud-builders/gcloud..'
     entrypoint: "bash"
     args:
       - "-c"
