@@ -22,7 +22,6 @@ steps:
     args:
     - run
     - --filename=./run/helloworld/src
-    - --image=gcr.io/$PROJECT_ID/jib:latest
     - --location=us-central1-c
     - --cluster=cluster-1    
      
