@@ -1,6 +1,6 @@
 steps: 
   - id: "run bash"
-    name: 'gcr.io/cloud-builders/gcloud..'
+    name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
     args:
       - "-c"
@@ -17,11 +17,11 @@ steps:
     entrypoint: mvn
     args: ['compile','jib:build']
     dir: "run/helloworld"
-  - id: 'Deploy image to kubernetes'
-    name: 'gcr.io/cloud-builders/gke-deploy'
-    args:
-    - run
-    - --filename=./run/helloworld/src
+ # - id: 'Deploy image to kubernetes'
+  #  name: 'gcr.io/cloud-builders/gke-deploy'
+   # args:
+    #- run
+   # - --filename=./run/helloworld/src
    # - --location=us-central1-c
-    - --cluster=cluster-1    
+   # - --cluster=cluster-1    
      
