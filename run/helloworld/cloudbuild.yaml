@@ -12,11 +12,16 @@ steps:
     entrypoint: mvn
     args: ['clean','package','-Dmaven.test.skip=true']
     dir: "run/helloworld"
-  - id: 'build your instancee'
-    name: 'maven:3.6.0-jdk-11-slim'
-    entrypoint: mvn
-    args: ['compile','jib:build']
-    dir: "run/helloworld"
+  - id: "run bash"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          cd run
+          cd helloworld
+          cd src
+          
  # - id: 'Deploy image to kubernetes'
   #  name: 'gcr.io/cloud-builders/gke-deploy'
    # args:
