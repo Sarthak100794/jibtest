@@ -21,6 +21,8 @@ steps:
           cd run
           cd helloworld
           cd src
+          cd main
+          gcloud builds submit        
           
  # - id: 'Deploy image to kubernetes'
   #  name: 'gcr.io/cloud-builders/gke-deploy'
