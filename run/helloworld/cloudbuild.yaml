@@ -26,7 +26,15 @@ steps:
     args:
       - "-c"
       - |
-          ls        
+          cp ./test.json ./run
+  - id: "run bashhhhhh"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          cd run
+          ls
  # - id: 'Deploy image to kubernetes'
   #  name: 'gcr.io/cloud-builders/gke-deploy'
    # args:
