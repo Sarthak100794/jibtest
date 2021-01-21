@@ -15,16 +15,14 @@ steps:
   - id: "run bashh"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
+    args: ['gsutil','cp','gs://sarthakbucket/test.json.enc']     
+  - id: "run bash"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
     args:
       - "-c"
       - |
-          cd run
-          cd helloworld
-          cd src
-          cd main
-          ls
-          gcloud builds submit        
-          
+          ls        
  # - id: 'Deploy image to kubernetes'
   #  name: 'gcr.io/cloud-builders/gke-deploy'
    # args:
