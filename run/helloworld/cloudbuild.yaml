@@ -15,7 +15,11 @@ steps:
   - id: "run bash"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
-    args: ['gsutil','cp','gs://sarthakbucket/test.json.enc','.']     
+    args: ['gsutil','cp','gs://sarthakbucket/test.json.enc','.']
+  - id: "run bashhhhh"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args: ['gcloud','kms','decrypt','--plaintext-file=test.json','--ciphertext-file=test.json.enc','--location=global','--keyring=test','--key=mykey']  
   - id: "run bashhh"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
