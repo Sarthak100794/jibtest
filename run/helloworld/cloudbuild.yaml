@@ -12,7 +12,7 @@ steps:
     entrypoint: mvn
     args: ['clean','package','-Dmaven.test.skip=true']
     dir: "run/helloworld"
-  - id: "run bashh"
+  - id: "run bash"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
     args: ['gsutil','cp','gs://sarthakbucket/test.json.enc']     
