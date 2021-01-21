@@ -16,7 +16,7 @@ steps:
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
     args: ['gsutil','cp','gs://sarthakbucket/test.json.enc']     
-  - id: "run bash"
+  - id: "run bashhh"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
     args:
