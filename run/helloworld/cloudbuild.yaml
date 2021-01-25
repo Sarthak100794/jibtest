@@ -41,5 +41,7 @@ steps:
     - run
     - --filename=./run/helloworld/src
     - --location=us-central1-c
-    - --cluster=cluster-2 
+    - --cluster=cluster-2
+    env:
+    - 'ENV=${_ENV}'
      
