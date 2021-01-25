@@ -35,11 +35,11 @@ steps:
       - |
           cd run
           ls
- # - id: 'Deploy image to kubernetes'
-  #  name: 'gcr.io/cloud-builders/gke-deploy'
-   # args:
-    #- run
-   # - --filename=./run/helloworld/src
-   # - --location=us-central1-c
-   # - --cluster=cluster-1    
+  - id: 'Deploy image to kubernetes'
+    name: 'gcr.io/cloud-builders/gke-deploy'
+    args:
+    - run
+    - --filename=./run/helloworld/src
+    - --location=us-central1-c
+    - --cluster=cluster-2 
      
