@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tomcat-image1
+  name: tomcat-imagess
   labels:
      app: hello
 spec:
   containers:
-  - name: private-reg-container
-    image: tomcat
+  - name: private-reg-containers
+    image: nginx
