@@ -9,5 +9,5 @@ spec:
   - name: private-reg-container
     image: tomcat
     env:
-    -name: ENV
-     value: ${ENV}
+     - name: ENV
+       value: ${ENV}
