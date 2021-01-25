@@ -8,3 +8,6 @@ spec:
   containers:
   - name: private-reg-containers
     image: nginx
+    env:
+     - name: ENV
+       value: {_ENV}
