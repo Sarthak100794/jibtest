@@ -35,14 +35,22 @@ steps:
       - |
           cd run
           ls
+  - id: Deploy
+    name: 'gcr.io/cloud-builders/kubectl'  
+    args:
+    - 'delete'
+    - 'deployment'
+    - '--all'
+    env:
+    - 'CLOUDSDK_COMPUTE_REGION=us-east1'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+        
   - id: 'Deploy image to kubernetes'
     name: 'gcr.io/cloud-builders/gke-deploy'
     args:
     - run
     - --filename=./run/helloworld/src
-    - --location=us-central1-c
-    - --cluster=cluster-2
-    env:
-      - 'ENV=${_ENV}'
+    - --location=us-east1
+    - --cluster=cluster-1
    
      
