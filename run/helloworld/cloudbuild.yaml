@@ -44,11 +44,7 @@ steps:
     args:
       - "-c"
       - |
-          cd run
-          cd helloworld
-          cd source
-          cd main
-          ls    
+          cat  run/helloworld/src/deployment.yaml    
  # - id: 'Deploy image to kubernetes'
  #   name: 'gcr.io/cloud-builders/gke-deploy'
  #   args:
