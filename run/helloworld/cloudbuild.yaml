@@ -27,7 +27,7 @@ steps:
     args:
     - '-c'
     - |
-     sed "s/nginx/tomcat/g" run/helloworld/src/deployment.yaml 
+     sed -i -e  "s/nginx/tomcat/g" run/helloworld/src/deployment.yaml 
      cat  run/helloworld/src/deployment.yaml
  
   - id: Deploy
