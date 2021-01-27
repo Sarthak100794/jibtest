@@ -36,7 +36,7 @@ steps:
     - '-f'
     - 'run/helloworld/src/deployment.yaml'
     env:
-    - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
   - id: "run bashhhhhhhh"
     name: 'gcr.io/cloud-builders/gcloud'
