@@ -30,7 +30,26 @@ steps:
     env:
     - 'CLOUDSDK_COMPUTE_REGION=us-central1'
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
-        
+  - id: Generate manifest
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: /bin/sh
+    args:
+    - '-c'
+    - |
+     sed "s/nginx/tomcat/g" src/deployment.yaml | \
+     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > src/main/kubernetes.yaml
+ 
+  - id: "run bashhhhhh"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          cd run
+          cd helloworld
+          cd source
+          cd main
+          ls    
   - id: 'Deploy image to kubernetes'
     name: 'gcr.io/cloud-builders/gke-deploy'
     args:
