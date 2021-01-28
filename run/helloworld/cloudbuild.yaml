@@ -27,7 +27,8 @@ steps:
     args:
     - '-c'
     - |
-     sed -i -e  "s/nginx/tomcat/g" run/helloworld/src/deployment.yaml 
+     sed -i -e  "s/nginx/tomcat/g" run/helloworld/src/deployment.yaml
+     sed -i -e  "s/tomcat-imagesss/test/g" run/helloworld/src/deployment1.yaml 
      cat  run/helloworld/src/deployment.yaml
  
   - id: Deploy
@@ -45,7 +46,7 @@ steps:
     args:
       - "-c"
       - |
-          cat  run/helloworld/src/deployment.yaml    
+          cat  run/helloworld/src/deployment1.yaml    
  # - id: 'Deploy image to kubernetes'
  #   name: 'gcr.io/cloud-builders/gke-deploy'
  #   args:
