@@ -27,8 +27,8 @@ steps:
     args:
     - '-c'
     - |
-     sed -i -e  "s/hello/world/g" run/helloworld/src/deployment1.yaml 
-     cat  run/helloworld/src/deployment.yaml
+     sed -i -e  "s/mvalue/VALUE/g" run/helloworld/src/deployment1.yaml 
+     cat  run/helloworld/src/deployment1.yaml
     env:
      - 'VALUE=${_VALUE}'
   - id: Deploy
