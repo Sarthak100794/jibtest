@@ -10,4 +10,4 @@ spec:
     image: nginx
     env:
     - name: env
-      value: value
+      value: mvalue
