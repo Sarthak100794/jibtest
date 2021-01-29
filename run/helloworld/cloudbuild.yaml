@@ -29,8 +29,8 @@ steps:
     - |
      sed -i -e  "s/mvalue/${_VALUE}/g" run/helloworld/src/deployment1.yaml 
      cat  run/helloworld/src/deployment1.yaml
-    env:
-     - 'VALUE=${_VALUE}'
+#    env:
+ #    - 'VALUE=${_VALUE}'
   - id: Deploy
     name: 'gcr.io/cloud-builders/kubectl'  
     args:
