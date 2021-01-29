@@ -7,11 +7,11 @@ steps:
       - |
           ls
      
-  - id: 'build your instance'
-    name: 'maven:3.6.0-jdk-11-slim'
-    entrypoint: mvn
-    args: ['clean','package','-Dmaven.test.skip=true']
-    dir: "run/helloworld"
+#  - id: 'build your instance'
+ #   name: 'maven:3.6.0-jdk-11-slim'
+ #   entrypoint: mvn
+ #   args: ['clean','package','-Dmaven.test.skip=true']
+ #   dir: "run/helloworld"
   
   - id: "run bashhhhhh"
     name: 'gcr.io/cloud-builders/gcloud'
@@ -27,7 +27,7 @@ steps:
     args:
     - '-c'
     - |
-     sed -i -e  "s/mvalue/myvalue/g" run/helloworld/src/deployment1.yaml 
+  #   sed -i -e  "s/mvalue/myvalue/g" run/helloworld/src/deployment1.yaml 
      cat  run/helloworld/src/deployment.yaml
     env:
      - 'VALUE=${_VALUE}'
