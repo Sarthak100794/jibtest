@@ -8,7 +8,7 @@ spec:
   initContainers:
   - name: init-myservice
     image: google/cloud-sdk
-    command: ['gsutil','cp','gs://galvanic-kit-303008/sigma-outlook-294006-a85d5ff6b7b4.json','.']
+    command: ['gsutil','cp','bucket','.']
   containers:
   - name: private-reg-containerssss
     image: nginx
