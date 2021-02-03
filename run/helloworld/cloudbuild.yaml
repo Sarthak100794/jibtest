@@ -6,7 +6,7 @@
       - "-c"
       - |
           ls
-  timeout: 900s   
+     
 #  - id: 'build your instance'
  #   name: 'maven:3.6.0-jdk-11-slim'
  #   entrypoint: mvn
@@ -56,6 +56,6 @@
     - --filename=./run/helloworld/src
     - --location=us-central1-c
     - --cluster=cluster-1
-      
+  timeout: 1200s    
    
      
