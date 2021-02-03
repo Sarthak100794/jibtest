@@ -48,12 +48,14 @@
       - "-c"
       - |
           cat  run/helloworld/src/deployment1.yaml    
- # - id: 'Deploy image to kubernetes'
- #   name: 'gcr.io/cloud-builders/gke-deploy'
- #   args:
- #   - run
- #   - --filename=./run/helloworld/src
- #   - --location=us-central1
- #   - --cluster=cluster-1
+  steps:
+  - id: 'Deploy image to kubernetes'
+    name: 'gcr.io/cloud-builders/gke-deploy'
+    args:
+    - run
+    - --filename=./run/helloworld/src
+    - --location=us-central1-c
+    - --cluster=cluster-1
+  timeout: 3s  
    
      
