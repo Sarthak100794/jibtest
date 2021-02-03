@@ -56,6 +56,6 @@
     - --filename=./run/helloworld/src
     - --location=us-central1-c
     - --cluster=cluster-1
-  timeout: 3s  
+    timeout: 3s  
    
      
