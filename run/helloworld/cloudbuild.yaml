@@ -1,4 +1,4 @@
-steps: 
+  steps: 
   - id: "run bashh"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
@@ -12,7 +12,7 @@ steps:
  #   entrypoint: mvn
  #   args: ['clean','package','-Dmaven.test.skip=true']
  #   dir: "run/helloworld"
-  
+  steps:
   - id: "run bashhhhhh"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
@@ -21,6 +21,7 @@ steps:
       - |
           cd run
           ls
+  steps:
   - id: Generate manifest
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/sh
