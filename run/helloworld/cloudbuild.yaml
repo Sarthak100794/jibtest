@@ -35,7 +35,7 @@
  #           '-t', 'gcr.io/$PROJECT_ID/mytest:latest',
   #          '--cache-from', 'gcr.io/$PROJECT_ID/mytest:latest',
   #          '.'
-          ]
+ #         ]
   # images: ['gcr.io/$PROJECT_ID/mytest:latest']
    # dir: "run"
   
