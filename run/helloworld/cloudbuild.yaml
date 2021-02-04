@@ -15,7 +15,7 @@
   - id: 'Building image'
     name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest', '.']
-    images: gcr.io/$PROJECT_ID/mytest
+    images: 'gcr.io/$PROJECT_ID/mytest'
     dir: "run/helloworld"
   
   #- id: 'building docker image'
