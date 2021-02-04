@@ -30,7 +30,7 @@
             '.'
           ]
     images: ['gcr.io/$PROJECT_ID/mytest:latest']
-    dir: "run/helloworld"
+    dir: "run"
   
  # - id: "run bashhhhhh"
  #   name: 'gcr.io/cloud-builders/gcloud'
