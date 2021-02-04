@@ -14,7 +14,7 @@
     dir: "run/helloworld"
   - id: 'Building image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest','--cache-from', 'gcr.io/$PROJECT_ID/mytest:latest' '.']
   
     dir: "run/helloworld"
   
@@ -26,18 +26,18 @@
 #    name: 'gcr.io/cloud-builders/docker'
 #    args: ['push', 'gcr.io/$PROJECT_ID/mytest']
 #    dir: "run/helloworld"
-  - name: 'gcr.io/cloud-builders/docker'
-    entrypoint: 'bash'
-    args: ['-c', 'docker pull gcr.io/$PROJECT_ID/mytest:latest || exit 0']
- -  name: 'gcr.io/cloud-builders/docker'
-    args: [
-            'build',
-            '-t', 'gcr.io/$PROJECT_ID/mytest:latest',
-            '--cache-from', 'gcr.io/$PROJECT_ID/mytest:latest',
-            '.'
+ # - name: 'gcr.io/cloud-builders/docker'
+ #   entrypoint: 'bash'
+ #   args: ['-c', 'docker pull gcr.io/$PROJECT_ID/mytest:latest || exit 0']
+# -  name: 'gcr.io/cloud-builders/docker'
+ #   args: [
+ #           'build',
+ #           '-t', 'gcr.io/$PROJECT_ID/mytest:latest',
+  #          '--cache-from', 'gcr.io/$PROJECT_ID/mytest:latest',
+  #          '.'
           ]
   # images: ['gcr.io/$PROJECT_ID/mytest:latest']
-    dir: "run"
+   # dir: "run"
   
  # - id: "run bashhhhhh"
  #   name: 'gcr.io/cloud-builders/gcloud'
