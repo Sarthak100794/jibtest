@@ -14,7 +14,7 @@
     dir: "run/helloworld"
   - id: 'Building image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest','.']
+    args: ['build','-t','gcr.io/$PROJECT_ID/mytest','.']
     dir: "run/helloworld"    
   - id: Generate manifest
     name: 'gcr.io/cloud-builders/gcloud'
@@ -26,31 +26,31 @@
      cat  run/helloworld/src/deployment1.yaml
 #    env:
  #    - 'VALUE=${_VALUE}'
-  - id: Deploy
-    name: 'gcr.io/cloud-builders/kubectl'  
-    args:
-    - 'apply'
-    - '-f'
-    - 'run/helloworld/src/deployment.yaml'
-    env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
-  - id: "run bashhhhhhhh"
-    name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-          cat  run/helloworld/src/deployment1.yaml    
+ # - id: Deploy
+ #   name: 'gcr.io/cloud-builders/kubectl'  
+ #   args:
+ #   - 'apply'
+ #   - '-f'
+ #   - 'run/helloworld/src/deployment.yaml'
+ #   env:
+#    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+ #   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+ # - id: "run bashhhhhhhh"
+#    name: 'gcr.io/cloud-builders/gcloud'
+#    entrypoint: "bash"
+#    args:
+#      - "-c"
+#      - |
+#          cat  run/helloworld/src/deployment1.yaml    
   
-  - id: 'Deploy image to kubernetes'
-    name: 'gcr.io/cloud-builders/gke-deploy'
-    args:
-    - run
-    - --filename=./run/helloworld/src
-    - --location=us-central1-c
-    - --cluster=cluster-1
-  images: 'gcr.io/$PROJECT_ID/mytest:latest'
+#  - id: 'Deploy image to kubernetes'
+#    name: 'gcr.io/cloud-builders/gke-deploy'
+#    args:
+#    - run
+ #   - --filename=./run/helloworld/src
+#    - --location=us-central1-c
+ #   - --cluster=cluster-1
+  
   timeout: 1200s    
    
      
