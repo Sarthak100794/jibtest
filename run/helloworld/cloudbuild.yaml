@@ -19,6 +19,11 @@
     - --cache=true
     - --cache-ttl=24h
     dir: "run/helloworld"
+  
+  - id: 'building docker image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build','-t', 'gcr.io/${PROJECT_ID}/mytest','.']
+    dir: "run/helloworld"
   - id: 'Pushing docker image'
     name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/${PROJECT_ID}/mytest']  
