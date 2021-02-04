@@ -15,35 +15,7 @@
   - id: 'Building image'
     name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest','.']
-  
-    dir: "run/helloworld"
-  
-  #- id: 'building docker image'
-  #  name: 'gcr.io/cloud-builders/docker'
-  #  args: ['build','-t', 'gcr.io/${PROJECT_ID}/mytest','.']
-  #  dir: "run/helloworld"
-#  - id: 'Pushing docker image'
-#    name: 'gcr.io/cloud-builders/docker'
-#    args: ['push', 'gcr.io/$PROJECT_ID/mytest']
-#    dir: "run/helloworld"
- # - name: 'gcr.io/cloud-builders/docker'
- #   entrypoint: 'bash'
- #   args: ['-c', 'docker pull gcr.io/$PROJECT_ID/mytest:latest || exit 0']
- 
-  
- # - id: "run bashhhhhh"
- #   name: 'gcr.io/cloud-builders/gcloud'
- #   entrypoint: "bash"
- #   args:
-  #    - "-c"
-   #   - |
-   #       cd run
-   #       ls
-  - id: 'Building imagess'
-    name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest','.']
-    
-    dir: "run/helloworld"
+    dir: "run/helloworld"    
   - id: Generate manifest
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/sh
