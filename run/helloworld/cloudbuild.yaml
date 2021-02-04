@@ -14,7 +14,7 @@
     dir: "run/helloworld"
   - id: 'Building image'
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest','--cache-from', 'gcr.io/$PROJECT_ID/mytest:latest' '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest','--cache-from', 'gcr.io/$PROJECT_ID/mytest:latest', '.']
   
     dir: "run/helloworld"
   
