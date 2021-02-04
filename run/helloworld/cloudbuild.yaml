@@ -47,7 +47,11 @@
    #   - |
    #       cd run
    #       ls
-  
+  - id: 'Building imagess'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest','.']
+    
+    dir: "run/helloworld"
   - id: Generate manifest
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/sh
