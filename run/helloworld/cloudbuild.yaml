@@ -15,7 +15,7 @@
   - id: 'Building image'
     name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/mytest', '.']
-    images: ['gcr.io/$PROJECT_ID/mytest:latest']
+  
     dir: "run/helloworld"
   
   #- id: 'building docker image'
@@ -82,6 +82,7 @@
     - --filename=./run/helloworld/src
     - --location=us-central1-c
     - --cluster=cluster-1
+  images: 'gcr.io/$PROJECT_ID/mytest:latest'
   timeout: 1200s    
    
      
