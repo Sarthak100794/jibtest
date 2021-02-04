@@ -17,7 +17,7 @@
     args:
     - --destination=gcr.io/$PROJECT_ID/mytest:0.01
     - --cache=true
-    - --cache-ttl=24h
+  #  - --cache-ttl=24h
     dir: "run/helloworld"
   
   #- id: 'building docker image'
