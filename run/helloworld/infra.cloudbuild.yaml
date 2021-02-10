@@ -22,4 +22,12 @@ steps:
   - |     
    terraform plan
   dir: "run/helloworld/src/main" 
+- id: 'tf apply'
+  name: 'hashicorp/terraform:0.13.5'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - |     
+   terraform apply --auto-approve
+  dir: "run/helloworld/src/main" 
           
