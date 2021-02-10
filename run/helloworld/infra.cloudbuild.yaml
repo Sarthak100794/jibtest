@@ -20,6 +20,6 @@ steps:
   args: 
   - '-c'
   - |     
-   terraform pan
+   terraform plan
   dir: "run/helloworld/src/main" 
           
