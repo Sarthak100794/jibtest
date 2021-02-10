@@ -7,7 +7,7 @@ steps:
   - |
     ls
 - id: 'tf init'
-  name: 'hashicorp/terraform:0.12.28'
+  name: 'hashicorp/terraform:0.13.5'
   entrypoint: 'sh'
   args: 
   - '-c'
@@ -15,7 +15,7 @@ steps:
    terraform init
   dir: "run/helloworld/src/main"
 - id: 'tf plan'
-  name: 'hashicorp/terraform:0.12.28'
+  name: 'hashicorp/terraform:0.13.5'
   entrypoint: 'sh'
   args: 
   - '-c'
