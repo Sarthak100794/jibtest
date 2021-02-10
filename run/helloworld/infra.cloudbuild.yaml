@@ -1,0 +1,18 @@
+steps: 
+- id: "run bashh"
+  name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: "bash"
+  args:
+  - "-c"
+  - |
+    ls
+- id: 'tf plan'
+  name: 'hashicorp/terraform:0.11.14'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - |     
+   terraform init
+  dir: "run/helloworld/src/main"
+ 
+          
