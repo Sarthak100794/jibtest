@@ -6,15 +6,6 @@
       - "-c"
       - |
           ls
-  - id: Deploy
-    name: 'gcr.io/cloud-builders/kubectl'  
-    args:
-    - 'delete'
-    - 'pod'
-    - 'busybox'
-    env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
   
   - id: delete
     name: 'gcr.io/cloud-builders/kubectl'  
