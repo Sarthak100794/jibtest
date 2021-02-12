@@ -21,7 +21,7 @@
     args:
     - 'delete'
     - 'pod'
-    - '$DEP'
+    - '_DEP'
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'  
