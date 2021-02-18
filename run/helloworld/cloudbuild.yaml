@@ -12,13 +12,14 @@
     entrypoint: mvn
     args: ['clean','package','-Dmaven.test.skip=true']
     dir: "run/helloworld"
-  - id: 'Building image'
-    name: 'gcr.io/kaniko-project/executor:latest'
-    args:
-    - --destination=gcr.io/$PROJECT_ID/mytest
-    - --cache=true
-    - --cache-ttl=24h
-    dir: "run/helloworld"    
+  - id: 'Build'
+    name: 'gcr.io/cloud-builders/javac'
+    args: ['HelloworldApplicationTests.java']
+    dir: "run/helloworld/src/test/java/com/example/helloworld"
+  artifacts:
+    objects:
+      location: 'gs://artifacts-bucketss/test'
+      paths: ['HelloworldApplicationTests.java']
   - id: Generate manifest
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/sh
