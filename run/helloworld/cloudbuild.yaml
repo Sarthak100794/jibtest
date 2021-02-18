@@ -16,7 +16,7 @@
   - id: 'buildd your instance'
     name: 'maven:3.6.0-jdk-11-slim'
     entrypoint: mvn
-    args: ['deply']
+    args: ['deploy']
     dir: "run/helloworld"  
   
 #    env:
