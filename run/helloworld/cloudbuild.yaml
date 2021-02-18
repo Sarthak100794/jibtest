@@ -20,14 +20,7 @@
     objects:
       location: 'gs://artifacts-bucketss/test'
       paths: ['HelloworldApplicationTests.java']
-  - id: Generate manifest
-    name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: /bin/sh
-    args:
-    - '-c'
-    - |
-     sed -i -e  "s/mvalue/${_VALUE}/g"  -e "s/hello/world/g"  -e "s/tomcat-imagesss/image/g"  run/helloworld/src/deployment1.yaml
-     cat  run/helloworld/src/deployment1.yaml
+  
 #    env:
  #    - 'VALUE=${_VALUE}'
  # - id: Deploy
@@ -55,6 +48,6 @@
 #    - --location=us-central1-c
  #   - --cluster=cluster-1
   
-  timeout: 1200s    
+ # timeout: 1200s    
    
      
