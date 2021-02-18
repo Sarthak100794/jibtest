@@ -12,14 +12,12 @@
     entrypoint: mvn
     args: ['clean','package']
     dir: "run/helloworld"
-  - id: 'Build'
-    name: 'gcr.io/cloud-builders/javac'
-    args: ['HelloworldApplicationTests.java']
-    dir: "run/helloworld/src/test/java/com/example/helloworld"
-  artifacts:
-    objects:
-      location: 'gs://artifacts-bucketss/test'
-      paths: ['HelloworldApplicationTests.java']
+  
+  - id: 'buildd your instance'
+    name: 'maven:3.6.0-jdk-11-slim'
+    entrypoint: mvn
+    args: ['deply']
+    dir: "run/helloworld"  
   
 #    env:
  #    - 'VALUE=${_VALUE}'
