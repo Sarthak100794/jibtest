@@ -3,15 +3,17 @@
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
     args:
-      - "-c"
+    - '-c'
+    - |
       sed -i -e "s/private-reg-containers/{_TEST}" run/helloworld/src/deployment.yaml
   
-  - id: "run bashh"
+  - id: "run bashhh"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
     args:
-      - "-c"
-       cat run/helloworld/src/deployment.yaml    
+    - '-c'
+    - |
+      cat run/helloworld/src/deployment.yaml    
   
   - id: delete
     name: 'gcr.io/cloud-builders/kubectl'  
