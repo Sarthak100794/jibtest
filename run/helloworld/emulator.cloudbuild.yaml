@@ -28,4 +28,5 @@
     args:
     - '-c'
     - |
-     gcloud builds submit --config ci.cloudbuild.yaml .  
+     gcloud builds submit --config cloudbuild.yaml .
+    dir: "run/helloworld" 
