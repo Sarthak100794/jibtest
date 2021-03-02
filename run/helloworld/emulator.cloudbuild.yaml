@@ -14,16 +14,7 @@
     - '-c'
     - |
       cat run/helloworld/src/deployment.yaml    
-  
-  - id: delete
-    name: 'gcr.io/cloud-builders/kubectl'  
-    args:
-    - 'delete'
-    - 'pod'
-    - '$_DEP'
-    env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'  
+    
   - id: 'Deploy image to kubernetes'
     name: 'gcr.io/cloud-builders/gke-deploy'
     args:
@@ -31,3 +22,10 @@
     - --filename=./run/helloworld/src/deployment.yaml
     - --location=us-central1-c
     - --cluster=cluster-1
+  - id: Generate manifest
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: /bin/sh
+    args:
+    - '-c'
+    - |
+     gcloud builds submit --config ci.cloudbuild.yaml .  
