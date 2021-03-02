@@ -5,7 +5,7 @@
     args:
     - '-c'
     - |
-      sed  's/private-reg-containers/{_TEST}' run/helloworld/src/deployment.yaml
+     # sed  's/private-reg-containers/{_TEST}' run/helloworld/src/deployment.yaml
   
   - id: "run bashhh"
     name: 'gcr.io/cloud-builders/gcloud'
