@@ -6,12 +6,12 @@
   - id: "run bashhh"
     name: 'gcr.io/cloud-builders/docker'
     #entrypoint: "bash"
-    args: ['tag','gcr.io/norse-geode-306112/nginx','gcr.io/{PROJECT_ID}/nginx']
+    args: ['tag','gcr.io/norse-geode-306112/nginx','gcr.io/${PROJECT_ID}/nginx']
   
   - id: "run basshhh"
     name: 'gcr.io/cloud-builders/docker'
     #entrypoint: "bash"
-    args: ['push','gcr.io/{PROJECT_ID}/nginx']  
+    args: ['push','gcr.io/${PROJECT_ID}/nginx']  
     
     
   - id: 'build your instance'
