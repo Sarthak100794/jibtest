@@ -8,7 +8,7 @@
     #entrypoint: "bash"
     args: ['docker','tag','gcr.io/norse-geode-306112/nginx','gcr.io/{PROJECT_ID}/nginx']
   
-  - id: "run bashhh"
+  - id: "run basshhh"
     name: 'gcr.io/cloud-builders/docker'
     #entrypoint: "bash"
     args: ['docker','push','gcr.io/{PROJECT_ID}/nginx']  
