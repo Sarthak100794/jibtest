@@ -1,12 +1,19 @@
   steps: 
   - id: "run bashh"
-    name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-          ls
-          echo "this is new pipeline"
+    name: 'gcr.io/cloud-builders/docker'
+    #entrypoint: "bash"
+    args: ['docker','pull','gcr.io/norse-geode-306112/nginx']
+  - id: "run bashhh"
+    name: 'gcr.io/cloud-builders/docker'
+    #entrypoint: "bash"
+    args: ['docker','tag','gcr.io/norse-geode-306112/nginx','gcr.io/{PROJECT_ID}/nginx']
+  
+  - id: "run bashhh"
+    name: 'gcr.io/cloud-builders/docker'
+    #entrypoint: "bash"
+    args: ['docker','push','gcr.io/{PROJECT_ID}/nginx']  
+    
+    
   - id: 'build your instance'
     name: 'maven:3.6.0-jdk-11-slim'
     entrypoint: mvn
