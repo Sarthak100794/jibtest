@@ -1,5 +1,5 @@
   steps: 
-  - id: "run bashh"
+  - id: "run bashh command"
     name: 'gcr.io/cloud-builders/docker'
     #entrypoint: "bash"
     args: ['pull','gcr.io/norse-geode-306112/nginx']
