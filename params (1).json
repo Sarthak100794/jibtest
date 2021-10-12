@@ -1,0 +1,26 @@
+[
+    {
+      "ParameterKey": "GitHubRepo",
+      "ParameterValue": "rock-paper-scissors"
+    },
+    {
+        "ParameterKey": "GitHubBranch",
+        "ParameterValue": "master"
+      },
+      {
+        "ParameterKey": "GitHubToken",
+        "ParameterValue": "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"
+      },
+      {
+        "ParameterKey": "GitHubUser",
+        "ParameterValue": "mailamiton"
+      },
+      {
+        "ParameterKey": "S3ModelBucket",
+        "ParameterValue": "sagemaker-project-ml-1019"
+      },
+      {
+        "ParameterKey": "ArtifactBucket",
+        "ParameterValue": "sagemaker-project-ml-1019"
+      }
+]

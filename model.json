@@ -1,0 +1,77 @@
+{
+    "Comment": "A Hello World example of the Amazon States Language using Pass states",
+    "StartAt": "SageMaker Create Model",
+    "States": {
+       "SageMaker Create Model": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::sagemaker:createModel",
+        "Parameters": {
+          "ExecutionRoleArn": "arn:aws:iam::685306736016:role/sam-sf-sagemaker-workflow-SageMakerRole-1729T795LG4IB",
+          "ModelName.$": "$.commitID",
+          "PrimaryContainer": {
+            "ModelDataUrl.$": "$.S3ModelArtifacts",
+            "Image.$": "$.imageUri"
+          }
+        },
+        "ResultPath": "$.taskresult",
+        "Next": "Sagemaker Create Endpoint Config",
+        "Catch": [
+          {
+            "ErrorEquals": [
+              "States.ALL"
+            ],
+            "Next": "FailState"
+          }
+        ]
+      },
+      "Sagemaker Create Endpoint Config": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::sagemaker:createEndpointConfig",
+        "Parameters": {
+          "EndpointConfigName.$": "$.commitID",
+          "ProductionVariants": [
+            {
+              "InitialInstanceCount": 1,
+              "InitialVariantWeight": 1,
+              "InstanceType": "ml.t2.medium",
+              "ModelName.$": "$.commitID",
+              "VariantName": "AllTraffic"
+            }
+          ]
+        },
+        "ResultPath": "$.result",
+        "Next": "Sagemaker Create Endpoint",
+        "Catch": [
+          {
+            "ErrorEquals": [
+              "States.ALL"
+            ],
+            "Next": "FailState"
+          }
+        ]
+      },
+      "Sagemaker Create Endpoint": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::sagemaker:createEndpoint",
+        "Parameters": {
+          "EndpointName.$": "$.commitID",
+          "EndpointConfigName.$": "$.commitID"
+        },
+        "Next": "SuccessState",
+        "Catch": [
+          {
+            "ErrorEquals": [
+              "States.ALL"
+            ],
+            "Next": "FailState"
+          }
+        ]
+      },
+      "SuccessState": {
+        "Type": "Succeed"
+      },
+      "FailState": {
+        "Type": "Fail"
+      }
+    }
+  }
