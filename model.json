@@ -1,6 +1,6 @@
 {
     "Comment": "A Hello World example of the Amazon States Language using Pass states",
-    "StartAt": "SageMaker Create Model",
+    "StartAt": "Sagemaker Create Endpoint Config",
     "States": {
       "Sagemaker Create Endpoint Config": {
         "Type": "Task",
