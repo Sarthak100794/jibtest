@@ -1,29 +1,8 @@
 {
   "Comment": "A Hello World example of the Amazon States Language using Pass states",
-  "StartAt": "SageMaker Create Model",
+  "StartAt": "Sagemaker Create Endpoint Config",
   "States": {
-     "SageMaker Create Model": {
-      "Type": "Task",
-      "Resource": "arn:aws:states:::sagemaker:createModel",
-      "Parameters": {
-        "ExecutionRoleArn": "arn:aws:iam::266739837450:role/sarthak-test-2-SageMakerRole-1MV2KQZONLV26",
-        "ModelName.$": "$.commitID",
-        "PrimaryContainer": {
-          "ModelDataUrl.$": "$.S3ModelArtifacts",
-          "Image.$": "$.imageUri"
-        }
-      },
-      "ResultPath": "$.taskresult",
-      "Next": "Sagemaker Create Endpoint Config",
-      "Catch": [
-        {
-          "ErrorEquals": [
-            "States.ALL"
-          ],
-          "Next": "FailState"
-        }
-      ]
-    },
+     
     "Sagemaker Create Endpoint Config": {
       "Type": "Task",
       "Resource": "arn:aws:states:::sagemaker:createEndpointConfig",
