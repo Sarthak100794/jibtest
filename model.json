@@ -6,7 +6,7 @@
       "Type": "Task",
       "Resource": "arn:aws:states:::sagemaker:createModel",
       "Parameters": {
-        "ExecutionRoleArn": "arn:aws:iam::${AccountID}:role/sarthak-test-2-SageMakerRole-1MV2KQZONLV26",
+        "ExecutionRoleArn": "arn:aws:iam::266739837450:role/sarthak-test-2-SageMakerRole-1MV2KQZONLV26",
         "ModelName.$": "$.commitID",
         "PrimaryContainer": {
           "ModelDataUrl.$": "$.S3ModelArtifacts",
