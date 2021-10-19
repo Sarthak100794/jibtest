@@ -1,23 +1,23 @@
 version: 0.2
-          phases:
-            pre_build:
-              commands:
-                - printenv | less
-                - $(aws ecr get-login --no-include-email)
-                - dt=`date '+%m-%d-%Y-%H-%M-%S'`
-                - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)-${dt}"                
-                - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
-                - echo "IMAGE_URI=${IMAGE_URI}"
-            build:
-              commands:
-                - cd container
-                - docker build --tag "$IMAGE_URI" .
-            post_build:
-              commands:
-                - docker push "$IMAGE_URI"
-                - cd ..
-                - echo $S3ModelArtifacts
-                - printf '{"commitID":"%s","imageUri":"%s","S3ModelArtifacts":"%s"}' "$TAG" "$IMAGE_URI" "$S3ModelArtifacts" > sf_start_params.json
-                - cat sf_start_params.json
-          artifacts:
-            files: sf_start_params.json
+phases:
+  pre_build:
+    commands:
+       - printenv | less
+       - $(aws ecr get-login --no-include-email)
+       - dt=`date '+%m-%d-%Y-%H-%M-%S'`
+       - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)-${dt}"                
+       - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
+       - echo "IMAGE_URI=${IMAGE_URI}"
+  build:
+    commands:
+       - cd container
+       - docker build --tag "$IMAGE_URI" .
+  post_build:
+    commands:
+       - docker push "$IMAGE_URI"
+       - cd ..
+       - echo $S3ModelArtifacts
+       - printf '{"commitID":"%s","imageUri":"%s","S3ModelArtifacts":"%s"}' "$TAG" "$IMAGE_URI" "$S3ModelArtifacts" > sf_start_params.json
+       - cat sf_start_params.json
+artifacts:
+  files: sf_start_params.json
